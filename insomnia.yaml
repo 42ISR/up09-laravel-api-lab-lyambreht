@@ -1,0 +1,298 @@
+_type: export
+__export_format: 4
+__export_date: 2026-10-17T00:00:00.000Z
+__export_source: insomnia.desktop.app:v2023.5.8
+resources:
+  - _id: wrk_1
+    parentId: null
+    modified: 1690000000000
+    created: 1690000000000
+    name: Tickets API
+    description: ""
+    scope: collection
+    _type: workspace
+
+  - _id: env_1
+    parentId: wrk_1
+    modified: 1690000000000
+    created: 1690000000000
+    name: Base Environment
+    data:
+      baseUrl: "http://127.0.0.1:8000"
+      token: ""
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1690000000000
+    _type: environment
+
+  - _id: req_register
+    parentId: wrk_1
+    modified: 1690000000000
+    created: 1690000000000
+    url: "{{ _.baseUrl }}/api/register"
+    name: Register
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "Иван Петров",
+          "email": "ivan@example.com",
+          "password": "password123",
+          "password_confirmation": "password123"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: 1690000000000
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+
+  - _id: req_login
+    parentId: wrk_1
+    modified: 1690000000000
+    created: 1690000000000
+    url: "{{ _.baseUrl }}/api/login"
+    name: Login
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "ivan@example.com",
+          "password": "password123"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: 1690000000000
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+
+  - _id: req_logout
+    parentId: wrk_1
+    modified: 1690000000000
+    created: 1690000000000
+    url: "{{ _.baseUrl }}/api/logout"
+    name: Logout
+    method: POST
+    body:
+      mimeType: no body
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: 1690000000000
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+
+  - _id: req_get_tickets
+    parentId: wrk_1
+    modified: 1690000000000
+    created: 1690000000000
+    url: "{{ _.baseUrl }}/api/tickets"
+    name: Get All Tickets
+    method: GET
+    body:
+      mimeType: no body
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: 1690000000000
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+
+  - _id: req_create_ticket
+    parentId: wrk_1
+    modified: 1690000000000
+    created: 1690000000000
+    url: "{{ _.baseUrl }}/api/tickets"
+    name: Create Ticket
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "title": "Не работает авторизация",
+          "body": "При входе получаю ошибку 500."
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: 1690000000000
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+
+  - _id: req_get_ticket
+    parentId: wrk_1
+    modified: 1690000000000
+    created: 1690000000000
+    url: "{{ _.baseUrl }}/api/tickets/1"
+    name: Get Ticket by ID
+    method: GET
+    body:
+      mimeType: no body
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: 1690000000000
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+
+  - _id: req_update_ticket
+    parentId: wrk_1
+    modified: 1690000000000
+    created: 1690000000000
+    url: "{{ _.baseUrl }}/api/tickets/1"
+    name: Update Ticket
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "status": "in_progress"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: 1690000000000
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+
+  - _id: req_delete_ticket
+    parentId: wrk_1
+    modified: 1690000000000
+    created: 1690000000000
+    url: "{{ _.baseUrl }}/api/tickets/1"
+    name: Delete Ticket
+    method: DELETE
+    body:
+      mimeType: no body
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: 1690000000000
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+
+  - _id: req_add_comment
+    parentId: wrk_1
+    modified: 1690000000000
+    created: 1690000000000
+    url: "{{ _.baseUrl }}/api/tickets/1/comments"
+    name: Add Comment
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "body": "Проверьте логи в storage/logs/laravel.log"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: 1690000000000
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+
+  - _id: req_delete_comment
+    parentId: wrk_1
+    modified: 1690000000000
+    created: 1690000000000
+    url: "{{ _.baseUrl }}/api/tickets/1/comments/1"
+    name: Delete Comment
+    method: DELETE
+    body:
+      mimeType: no body
+    parameters: []
+    headers: []
+    authentication:
+      type: bearer
+      token: "{{ _.token }}"
+    metaSortKey: 1690000000000
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request

@@ -1,0 +1,25 @@
+info:
+  name: login
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/login"
+  body:
+    type: json
+    data: |-
+      {
+        "email": "ivan@example.com",
+        "password": "password123"
+      }
+  auth:
+    type: bearer
+    token: "{{token}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

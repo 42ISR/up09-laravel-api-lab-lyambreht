@@ -1,0 +1,8 @@
+name: local
+variables:
+  - name: baseUrl
+    value: https://fuzzy-rotary-phone-jjqrr9q9g4w635xx4-8000.app.github.dev
+    description: ""
+  - name: token
+    value: 1|LmLFIn1b3ticeFQm80iNotHIJuaTrDYImra4lIDC718cf9b4
+    description: ""
