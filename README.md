@@ -20,8 +20,8 @@ APP_URL=ссылка на 8000 порт
 ```bash
 composer run setup
 composer run dev
-```
-
+```      
+  sad
 Должны увидеть `Server running on [http://127.0.0.1:8000]`. Остановите сервер (`Ctrl+C`).
 
 ---
